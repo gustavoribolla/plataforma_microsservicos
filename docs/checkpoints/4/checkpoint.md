@@ -16,7 +16,7 @@ jenkins/
     === "compose.yaml"
 
         ``` { .yaml .copy .select linenums="1" }
-        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/jenkins/compose.yaml"
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/docs/checkpoints/4/jenkins/compose.yaml"
         ```
 
 <!-- termynal -->
@@ -46,14 +46,14 @@ Once Jenkins is running, you will need to configure it. The first time you acces
 
 Setting the a number of executors to 10 will allow us to run two jobs in parallel. This is useful for speeding up the build process, especially when we have multiple projects or stages that can be executed concurrently.
 
-![](../assets/images/jenkins.system.nexecutors.png){width=100%}
+![](./jenkins.system.nexecutors.png){width=100%}
 
 
 ## Pipeline
 
 In this checkpoint, we will create a Jenkins pipeline that will build and deploy our application, [Pipeline as Code](https://www.jenkins.io/doc/book/pipeline/pipeline-as-code/){target="_blank"}. The pipeline will be defined in a `Jenkinsfile` located in the root of our project.
 
-![](../assets/images/jenkins.pipeline.png){width=100%}
+![](./jenkins.pipeline.png){width=100%}
 
 ``` { .tree .copy .select }
 api/
@@ -130,7 +130,7 @@ For setting up the credentials, you can use the Jenkins UI to create a new crede
 
 <!-- ![Jenkins Credentials](../assets/images/jenkins.crenditials.png){width=100%} -->
 
-![Jenkins Credentials](../assets/images/jenkins.crenditials.add.png){width=100%}
+![Jenkins Credentials](./jenkins.crenditials.add.png){width=100%}
 
 Also, Jenkins could deploy the application to a Docker Compose environment. This can be done by adding a new stage to the pipeline that uses the `docker compose` command to deploy the application.
 

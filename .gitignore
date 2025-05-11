@@ -6,3 +6,5 @@ env/
 target/
 volume/
 __pycache__/
+
+.env

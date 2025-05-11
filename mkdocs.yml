@@ -109,6 +109,7 @@ plugins:
   - git-committers:
       repository: hsandmann/hsandmann.github.com
       branch: main
+      token: !ENV MKDOCS_GIT_COMMITTERS_APIKEY
   - search
   - minify:
       minify_html: true
@@ -133,11 +134,11 @@ nav:
   - Home: index.md
   - 2025.1: versions/2025.1.md
   - Checkpoints:
-    - 1. CRUD: checkpoints/checkpoint1.md
-    - 2. Gateway: checkpoints/checkpoint2.md
-    - 3. Security: checkpoints/checkpoint3.md
-    - 4. DevOps: checkpoints/checkpoint4.md
-    - 5. Orchestration: checkpoints/checkpoint5.md
+    - 1. CRUD: checkpoints/1/checkpoint.md
+    - 2. Gateway: checkpoints/2/checkpoint.md
+    - 3. Security: checkpoints/3/checkpoint.md
+    - 4. DevOps: checkpoints/4/checkpoint.md
+    - 5. Orchestration: checkpoints/5/checkpoint.md
   - Exercises:
     - Individual:
       - 1. Exchange API: exercises/exercise1.md
