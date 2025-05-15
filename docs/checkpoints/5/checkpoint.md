@@ -164,6 +164,13 @@ Example of a simple Kubernete's YAML files:
     kubectl get services
     ```
 
+!!! tip "Horizontal Pod Autoscaler"
+
+    The Horizontal Pod Autoscaler (HPA) automatically scales the number of pods in a deployment or replica set based on observed CPU utilization or other select metrics. It adjusts the number of replicas dynamically to ensure that the application can handle varying loads without manual intervention.
+    To set up HPA, you need to define the target CPU utilization and the minimum and maximum number of replicas. The HPA controller continuously monitors the metrics and adjusts the number of replicas accordingly.
+
+    Check the documentation for more details on how to set up HPA: [Horizontal Pod Autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) and [HorizontalPodAutoscaler Walkthrough](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/){:target="_blank"}.
+
 
 ---
 
@@ -222,3 +229,8 @@ To install Minikube, follow the instructions in the [Minikube documentation](htt
 [^1]: [What is Container Orchestration? - Red Hat](https://www.redhat.com/en/topics/containers/what-is-container-orchestration){:target="_blank"}
 [^2]: [Docker Compose vs Kubernetes - Differences Explained - Spacelift](https://spacelift.io/blog/docker-compose-vs-kubernetes){:target="_blank"}
 [^3]: [Kubernetes Alternatives for Container Orchestration - Wiz](https://www.wiz.io/academy/kubernetes-alternatives){:target="_blank"}
+[^4]: [Kubernetes Cheat Sheet - Kubernetes](https://kubernetes.io/docs/reference/kubectl/cheatsheet/){:target="_blank"}
+[^5]: [Minikube Cheat Sheet - Minikube](https://minikube.sigs.k8s.io/docs/commands/){:target="_blank"}
+[^6]: [Horizontal Pod Autoscaling - Kubernetes](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/){:target="_blank"}
+[^7]: [HorizontalPodAutoscaler Walkthrough - Kubernetes](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/){:target="_blank"}
+[^8]: [Kubernetes Architecture - Kubernetes](https://kubernetes.io/docs/concepts/overview/components/){:target="_blank"}

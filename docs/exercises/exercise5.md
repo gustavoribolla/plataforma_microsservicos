@@ -1,74 +1,47 @@
-## MiniKube
+Kubernetes should be installed and running on your local machine. You can use Minikube or Kind for this purpose. If you are using Docker Desktop, make sure Kubernetes is enabled in the settings.
 
-MiniKube is a tool that makes it easy to run Kubernetes locally. It runs a single-node Kubernetes cluster inside a VM on your laptop or in your cloud environment. MiniKube is great for users looking to try out Kubernetes or develop with it day-to-day. Its installation is available on the [MiniKube website](https://minikube.sigs.k8s.io/docs/start/){target="_blank"}.
+!!! warning "TO DO"
 
-The task is to create a Kubernetes cluster using MiniKube. You can use the following command to start a MiniKube cluster:
+    All microservices should be published in the same kubernetes cluster. Create the setup files for each microservice in the root of the project, eg.:
 
-```bash
-minikube start --driver=docker --profile=store
-```
+    ``` { .tree }
+    api/
+        account-service/
+            k8s/
+                k8s.yaml
+    ```
 
-``` shell
-minikube profile list
-```
+    Where `k8s.yaml` is the setup file for the microservice. The setup file should include the following resources:
 
-``` shell
-minikube delete --all
-```
+    - `Deployment`;
+    - `Service`;
+    - `Ingress`, and;
+    - `ConfigMap`.
 
-``` shell
-minikube delete --all --purge
-```
+    The setup file should be created in the root of the project, and it should include all microservices:
 
-Dashboard
-``` shell
-minikube dashboard
-```
+    - `account-service`;
+    - `auth-service`;
+    - `gateway-service`;
+    - `product-service`, and;
+    - `order-service`.
 
-## Kubectl
+    **Execute** the all services in the same cluster, and make sure they are running. You can use the following command to check if the services are running. You can user local kubernetes or a cloud provider, such as AWS, Azure, or Google Cloud Platform. **Evidence** the services are running in the same cluster using a video.
 
-Kubectl is a command-line tool for interacting with Kubernetes clusters. It allows you to deploy applications, inspect and manage cluster resources, and view logs. Kubectl is available on the [Kubernetes website](https://kubernetes.io/docs/tasks/tools/) {target="_blank"}.
+---
 
-``` shell
-kubectl apply -f <filename>
-```
+!!! danger "Entrega"
 
-``` shell
-kubectl get deployments
-```
+    Individualmente, cada aluno deve criar um repositório no GitHub, com a documentação em MkDocs dos exercícios realizados e também com o projeto e entrega o link via BlabkBoard. Na documentação publicada deve constar:
 
-``` shell
-kubectl get svc
-```
-
-``` shell
-kubectl get pods
-```
-
-``` shell
-kubectl port-forward <pod> 8080:8080
-```
-
-``` shell
-kubectl exec -it <pod> -- bash
-```
-
-``` shell
-kubectl delete --all
-```
-
-``` shell
-kubectl api-resources
-```
-
-``` shell
-kubectl logs <pod>
-```
-
-``` shell
-kubectl describe pod <pod>
-```
-
-``` shell title="reset the core dns"
-kubectl -n kube-system rollout restart deployment coredns
-```
+    - Nome do aluno e grupo;
+    - Documentação das atividades realizadas;
+    - Código fonte das atividades realizadas;
+    - Documentação do projeto;
+    - Código fonte do projeto;
+    - Link para todos os repositórios utilizados;
+    - Destaques para os bottlenecks implementados (ao menos 2 por indivíduo);
+    - Apresentação do projeto;
+    - Vídeo de apresentação do projeto (2-3 minutos);
+    
+    Um template de documentação pode ser encontrado em [Template de Documentação](https://hsandmann.github.io/documentation.template/){target="_blank"}.
