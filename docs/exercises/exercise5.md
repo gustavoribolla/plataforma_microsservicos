@@ -13,10 +13,10 @@ Kubernetes should be installed and running on your local machine. You can use Mi
 
     Where `k8s.yaml` is the setup file for the microservice. The setup file should include the following resources:
 
-    - `Deployment`;
-    - `Service`;
-    - `Ingress`, and;
-    - `ConfigMap`.
+    - `Secrets`;
+    - `ConfigMap`;
+    - `Deployment`, and;
+    - `Service`.
 
     The setup file should be created in the root of the project, and it should include all microservices:
 

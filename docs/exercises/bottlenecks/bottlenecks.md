@@ -22,6 +22,13 @@ Observability is the ability to measure and understand the internal state of a s
 - <iframe width="100%" height="470" src="https://www.youtube.com/embed/K_EI1SxVQ5Q" allowfullscreen></iframe>
 
 
+??? tip "Spring + Prometheus + Grafana"
+
+    ```{ .yaml .lineno="1" }
+    --8<-- "/docs/exercises/bottlenecks/observability/prometheus.yaml"
+    ```
+
+
 
 ## Messaging
 
