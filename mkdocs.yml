@@ -148,7 +148,7 @@ nav:
       - 5. MiniKube: exercises/exercise5.md
       - Bottlenecks: exercises/bottlenecks.md
     - Team:
-      - Project: exercises/project.md
+      - Project: exercises/project/project.md
   - Concepts:
     - Microservices: concepts/microservices.md
     - Architectures: concepts/architectures.md
