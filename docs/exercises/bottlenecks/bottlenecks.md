@@ -158,7 +158,7 @@ Observability is the ability to measure and understand the internal state of a s
 
     === "6. Access Grafana"
 
-        After starting the containers and binding the ports to your local machine, you can access Grafana at `http://localhost:3000` with the default username `admin` and password `admin`. You can then create dashboards to visualize the metrics collected from your Spring Boot application.
+        After starting the containers and binding the ports to your local machine, you can access Grafana at `http://localhost:3000` with the default username `admin` and password `admin`. You can then create or import dashboards to visualize the metrics collected from your Spring Boot application.
 
         For more information on how to create dashboards in Grafana, refer to the [Grafana documentation](https://grafana.com/docs/grafana/latest/getting-started/getting-started-grafana/){target="_blank"}.
 
