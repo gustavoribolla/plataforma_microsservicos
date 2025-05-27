@@ -1,3 +1,6 @@
 [submodule "api/account"]
 	path = api/account
 	url = https://github.com/gustavoribolla/api.account.git
+[submodule "api/account-service"]
+	path = api/account-service
+	url = https://github.com/gustavoribolla/api.account_service.git
