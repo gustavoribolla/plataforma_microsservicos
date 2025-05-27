@@ -4,3 +4,6 @@
 [submodule "api/account-service"]
 	path = api/account-service
 	url = https://github.com/gustavoribolla/api.account_service.git
+[submodule "api/auth"]
+	path = api/auth
+	url = https://github.com/gustavoribolla/api.auth.git
