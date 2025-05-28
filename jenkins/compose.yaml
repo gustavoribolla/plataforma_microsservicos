@@ -9,7 +9,7 @@ services:
       dockerfile_inline: |
         FROM jenkins/jenkins:jdk21
         USER root
-        
+
         # Install tools
         RUN apt-get update && apt-get install -y lsb-release iputils-ping maven
 
@@ -29,7 +29,8 @@ services:
         RUN echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /' | tee /etc/apt/sources.list.d/kubernetes.list
         RUN chmod 644 /etc/apt/sources.list.d/kubernetes.list
         RUN apt-get update && apt-get install -y kubectl
-        
+
+        RUN groupadd docker
         RUN usermod -aG docker jenkins
     ports:
       - 9080:8080
