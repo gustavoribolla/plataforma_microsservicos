@@ -19,3 +19,6 @@
 [submodule "api/product"]
 	path = api/product
 	url = https://github.com/gustavoribolla/api.product.git
+[submodule "api/product-service"]
+	path = api/product-service
+	url = https://github.com/gustavoribolla/api.product_service.git
