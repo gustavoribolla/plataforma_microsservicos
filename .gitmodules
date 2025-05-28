@@ -16,3 +16,6 @@
 [submodule "api/exchange-service"]
 	path = api/exchange-service
 	url = https://github.com/gustavoribolla/api.exchange_service.git
+[submodule "api/product"]
+	path = api/product
+	url = https://github.com/gustavoribolla/api.product.git
