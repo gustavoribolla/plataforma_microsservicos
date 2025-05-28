@@ -277,6 +277,7 @@ A apresentação do seu projeto é uma parte importante do processo de desenvolv
 !!! info "TO DO"
 
     Crie uma apresentação do seu projeto, incluindo os seguintes tópicos:
+    
     - Introdução ao projeto;
     - Arquitetura do projeto;
     - Demonstração da aplicação;
