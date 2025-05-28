@@ -263,9 +263,11 @@ A análise de custos é uma parte importante do desenvolvimento de software, poi
 
 A plataforma como serviço (PaaS) é um modelo de computação em nuvem que fornece uma plataforma para desenvolver, executar e gerenciar aplicativos sem a complexidade de construir e manter a infraestrutura normalmente associada ao desenvolvimento e lançamento de aplicativos.
 
+![](../project/paas/iaas-paas-saas-diagram.png){ width=100% }
+
 !!! info "TO DO"
 
-    Faça um plano para transformar sua aplicação em uma PaaS.
+    Descreva onde seu grupo utilizou PaaS e como utilizou.
 
 
 ## Apresentação
