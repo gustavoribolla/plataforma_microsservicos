@@ -1,7 +1,6 @@
 name: store
 
 services:
-  
   db:
     image: postgres:latest
     hostname: db
@@ -11,32 +10,52 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-store}
     volumes:
       - $VOLUME/postgres/store:/var/lib/postgresql/data
-    # ports:
-    #   - 5432:5432
 
   account:
     hostname: account
-    image: humbertosandmann/account
+    build:
+      context: ./account-service
+      dockerfile: Dockerfile
     environment:
       DATABASE_HOST: db
       DATABASE_USER: ${POSTGRES_USER:-store}
       DATABASE_PASSWORD: ${POSTGRES_PASSWORD:-store}
 
-  # auth:
-  #   hostname: auth
-  #   image: humbertosandmann/auth
-  #   environment:
-  #     JWT_SECRET_KEY: ${JWT_SECRET_KEY:-yrBBgYlvJQeslzFlgX9MFZccToI2fjRFqualquercoisa}
+  auth:
+    hostname: auth
+    build:
+      context: ./auth-service
+      dockerfile: Dockerfile
+    environment:
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-yrBBgYlvJQeslzFlgX9MFZccToI2fjRFqualquercoisa}
 
   gateway:
     hostname: gateway
-    image: humbertosandmann/gateway
+    build:
+      context: ./gateway-service
+      dockerfile: Dockerfile
     environment:
       - LOGGING_LEVEL_STORE=${LOGGING_LEVEL_STORE:-debug}
     ports:
       - 8080:8080
 
-  exchange:
+  product:
+    hostname: product
     build:
-      context: ./exchange-service
+      context: ./product-service
       dockerfile: Dockerfile
+    environment:
+      DATABASE_HOST: db
+      DATABASE_USER: ${POSTGRES_USER:-store}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD:-store}
+
+
+  order:
+    hostname: order
+    build:
+      context: ./order-service
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_HOST: db
+      DATABASE_USER: ${POSTGRES_USER:-store}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD:-store}
