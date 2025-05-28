@@ -277,7 +277,7 @@ A apresentação do seu projeto é uma parte importante do processo de desenvolv
 !!! info "TO DO"
 
     Crie uma apresentação do seu projeto, incluindo os seguintes tópicos:
-    
+
     - Introdução ao projeto;
     - Arquitetura do projeto;
     - Demonstração da aplicação;
@@ -286,7 +286,9 @@ A apresentação do seu projeto é uma parte importante do processo de desenvolv
 
     O vídeo de apresentação deve ter entre 2 e 3 minutos e deve ser enviado junto com a documentação do projeto.
 
+!!! tip "Video de Apresentação"
 
+    Excepcionalmente, nesta edição do curso, a apresentação do projeto será feita através de um vídeo de 3 a 5 minutos, onde cada grupo deve apresentar o projeto e os bottlenecks implementados. O vídeo deve ser enviado junto com a documentação do projeto.
 
 !!! danger "Entrega"
 
