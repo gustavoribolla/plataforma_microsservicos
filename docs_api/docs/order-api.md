@@ -13,7 +13,7 @@ Acesse o [repositório](https://github.com/gustavoribolla/api.order) da interfac
 
 | Item                           | Valor                                                   |
 |--------------------------------|---------------------------------------------------------|
-| **Docker image**               | `ribollequis87/order-service:latest`                    |
+| **Docker image**               | `ribollequis87/order-service:latest`                   |
 | **Porta padrão**               | `8080`                                                  |
 | **Base URL**                   | `http://localhost:8080`                                 |
 | **Health-check**               | `GET /actuator/health` → `200 {"status":"UP"}`          |
@@ -21,6 +21,7 @@ Acesse o [repositório](https://github.com/gustavoribolla/api.order) da interfac
 | **Banco**                      | PostgreSQL (`orders` schema)                            |
 | **Dependência externa**        | Product API (Feign)                                     |
 | **Caches em uso**              | `orderById`, `ordersByAccount`                          |
+| **Monitoramento**              | Prometheus e Grafana com métricas em `/actuator/prometheus` |
 
 ---
 
@@ -151,7 +152,7 @@ docker run -p 8080:8080 \
 
 ## Observabilidade
 
-* **Caches** monitorados via `/actuator/caches`.
-* Logs estruturados (`{ "level":"DEBUG", "msg":"Order found", … }`).
-
----
+* **Caches** monitorados via `/actuator/caches`
+* **Métricas Prometheus** expostas em `/actuator/prometheus`
+* **Grafana** configurado para leitura automática do Prometheus
+* Logs estruturados (`{ "level":"DEBUG", "msg":"Order found", … }`)

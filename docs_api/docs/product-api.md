@@ -1,6 +1,6 @@
 # Product API
 
-Implementação em **Spring Boot 3 / Java 21**, parte do
+Implementação em **Spring Boot 3 / Java 21**, parte do  
 [Exercício 2 — Product API](https://insper.github.io/platform/exercises/exercise2/).
 
 ---
@@ -22,6 +22,7 @@ Acesse o [repositório](https://github.com/gustavoribolla/api.product) da interf
 | **OpenAPI UI**                 | `GET /swagger-ui.html`                          |
 | **Banco**                      | PostgreSQL (`products` schema)                  |
 | **Build**                      | `mvn clean package -DskipTests`                 |
+| **Monitoramento**              | Prometheus e Grafana com métricas em `/actuator/prometheus` |
 
 ---
 
@@ -63,7 +64,7 @@ curl -X POST http://localhost:8080/product \
 
 ---
 
-### 2. `GET /product/{id}`  <!-- cached -->
+### 2. `GET /product/{id}`
 
 ```bash
 curl http://localhost:8080/product/fc2e5221-3e40-4418-a1d7-0c5d68427af2
@@ -78,7 +79,7 @@ curl http://localhost:8080/product/fc2e5221-3e40-4418-a1d7-0c5d68427af2
 
 ---
 
-### 3. `GET /product`  <!-- cached -->
+### 3. `GET /product`
 
 Lista produtos (paginação opcional).
 
@@ -191,16 +192,6 @@ docker run -p 8080:8080 ribollequis87/product-service:latest
 * **Spring Boot Actuator** expõe:
 
   * `/actuator/health`     – status da aplicação
-  * `/actuator/metrics`   – métricas Micrometer
-* Métricas prontas para Prometheus + Grafana.
-
----
-
-## Próximos Passos
-
-* **HATEOAS** – links do Product para Order API.
-* **Circuit Breaker** no cliente Feign (Resilience4J).
-* **Security** – endpoints protegidos por JWT (auth-service).
-* **Tests** – Testcontainers + Rest-Assured para integração.
-
----
+  * `/actuator/metrics`    – métricas Micrometer
+  * `/actuator/prometheus` – endpoint de scraping
+* **Prometheus e Grafana** configurados para leitura automática
