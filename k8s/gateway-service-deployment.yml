@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gateway-service
+  template:
+    metadata:
+      labels:
+        app: gateway-service
+    spec:
+      containers:
+        - name: gateway-service
+          image: ribollequis87/gateway-service:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DATABASE_HOST
+              value: "db"
+            - name: DATABASE_USER
+              value: "store"
+            - name: DATABASE_PASSWORD
+              value: "store"
