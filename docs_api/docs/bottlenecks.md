@@ -46,7 +46,7 @@ public class ProductService {
     @Cacheable("allProducts")
     public List<Product> findAll() { … }
 }
-````
+```
 
 O mesmo padrão foi aplicado a `OrderService`.
 
@@ -108,10 +108,10 @@ scrape_configs:
 
 * Visualizações no Prometheus e Grafana:
 
-![Prometheus rodando](../images/prometheus.png)
+![Prometheus rodando](images/prometheus.png)
 *Figura: Prometheus funcionando para product e order*<br>
 
-![Grafana com Prometheus](../images/grafana_prometheus.png)
+![Grafana com Prometheus](images/grafana_prometheus.png)
 *Figura: Prometheus configurado como data source no Grafana*<br>
 
 ---

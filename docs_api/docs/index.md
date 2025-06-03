@@ -2,20 +2,23 @@
 
 [YouTube – vídeo-guia](https://youtu.be/<ID_DO_VIDEO>)
 
-> **TL;DR** – este repositório demonstra, na prática, a criação de APIs independentes (Exchange, Product, Order) integradas via **Spring Cloud OpenFeign**, empacotadas em **Docker**, entregues por **Jenkins** e orquestradas em **Minikube**.  <br>
-> **Caching** e outras otimizações de desempenho são documentadas em *Bottlenecks*.
+Projeto desenvolvido por: *Gustavo Colombi Ribolla*
+
+> **TL;DR** – este repositório demonstra, na prática, a criação de APIs independentes (Exchange, Product, Order) integradas via **Spring Cloud OpenFeign**, empacotadas em **Docker** e entregues por **Jenkins**.
+> **Caching**, **observabilidade (Prometheus + Grafana)** e **Kubernetes com MiniKube** também foram implementados.
 
 ---
 
 ## O que você encontra aqui
 
-| Seção | Conteúdo em destaque |
-|-------|----------------------|
-| **[Exchange API](exchange-api/)** | FastAPI + requests • Cotação de moedas • Headers customizados |
-| **[Product API](product-api/)** | CRUD completo • Spring Data • Cache de resultados |
-| **[Order API](order-api/)** | Composição de itens • Totalização • Integração com Product |
-| **[Jenkins](jenkins/)** | Pipeline as Code • Multi-arch Docker • Publicação no Hub |
-| **[Bottlenecks](bottlenecks/)** | Diagnóstico de gargalos • Spring Cache • Métricas p95 |
+| Seção                             | Conteúdo em destaque                                                 |
+| --------------------------------- | -------------------------------------------------------------------- |
+| **[Exchange API](exchange-api/)** | FastAPI + requests • Cotação de moedas • Headers customizados        |
+| **[Product API](product-api/)**   | CRUD completo • Spring Data • Cache de resultados                    |
+| **[Order API](order-api/)**       | Composição de itens • Totalização • Integração com Product           |
+| **[Jenkins](jenkins/)**           | Pipeline as Code • Multi-arch Docker • Publicação no Hub             |
+| **[MiniKube](minikube/)**         | Deploy no Kubernetes local • `kubectl` • Serviços visíveis via túnel |
+| **[Bottlenecks](bottlenecks/)**   | Diagnóstico de gargalos • Spring Cache • Métricas p95                |
 
 ---
 
@@ -57,13 +60,15 @@ flowchart LR
     classDef python fill:#3772a3,color:#fff
     class PR,OR spring
     class EX python
-````
+```
 
 * **Gateway** (Reverse-proxy) encaminha as requisições.
 * **Product** persiste em **PostgreSQL**; usa **cache in-memory**.
 * **Order** agrega preços do Product e grava pedidos.
 * **Exchange** consulta cotações em provider externo.
 * CI/CD automatizado pelo **Jenkins**, imagens enviadas para `ribollequis87/*`.
+* Observabilidade com **Prometheus** e **Grafana**.
+* Todos os serviços podem ser orquestrados com **MiniKube + kubectl**.
 
 ---
 
@@ -101,6 +106,5 @@ curl -X POST http://localhost:8080/order \
 
 ## Agradecimentos
 
-Projeto desenvolvido para a disciplina **[Plataforma de Microsserviços @ Insper](https://insper.github.io/platform/)**<br>
+Projeto desenvolvido para a disciplina **[Plataforma de Microsserviços @ Insper](https://insper.github.io/platform/)**
 Orientação: Prof. Humberto Sandmann
-

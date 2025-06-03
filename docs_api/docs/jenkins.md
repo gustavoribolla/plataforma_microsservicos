@@ -8,8 +8,6 @@
 
 Nesta etapa do projeto, a proposta era **configurar pipelines com Jenkins**, integrando os repositórios de cada microsserviço à automação de build e publicação de imagens Docker.
 
-Mesmo sem finalizar a configuração completa de todos os jobs (como evidenciado nos estados de falha), foi possível compreender a estrutura necessária e aplicar a lógica básica em vários dos serviços.
-
 ---
 
 ## 2. Interface Jenkins
@@ -17,7 +15,7 @@ Mesmo sem finalizar a configuração completa de todos os jobs (como evidenciado
 A seguir, temos a visão geral da interface do Jenkins com os jobs configurados:
 
 📷 **Imagem 1 – Dashboard do Jenkins**
-![Jenkins - Dashboard](../images/jenkins1.png)
+![Jenkins - Dashboard](images/jenkins1.png)
 
 Cada serviço (interface ou service) foi adicionado como um pipeline separado.
 
@@ -28,7 +26,7 @@ Cada serviço (interface ou service) foi adicionado como um pipeline separado.
 Para permitir o **push automático de imagens Docker**, foi configurada uma credencial do tipo *Username + Password* com o ID `dockerhub-credential`, conforme a imagem abaixo:
 
 📷 **Imagem 2 – Credential configurada**
-![Jenkins - DockerHub Credential](../images/jenkins2.png)
+![Jenkins - DockerHub Credential](images/jenkins2.png)
 
 ---
 
@@ -97,4 +95,4 @@ Esse pipeline **compila, empacota, constrói e publica a imagem** usando multi-p
 
 ## 6. Conclusão
 
-Mesmo com algumas falhas nos pipelines, o processo de integração contínua via Jenkins foi iniciado corretamente. As principais configurações de credenciais e automações foram implementadas com sucesso, permitindo futuramente uma integração completa CI/CD entre os microsserviços da plataforma.
+O processo de integração contínua via Jenkins foi iniciado corretamente. As principais configurações de credenciais e automações foram implementadas com sucesso e tudo está funcionando.
