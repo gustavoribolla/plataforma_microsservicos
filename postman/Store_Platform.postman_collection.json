@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "c18b05f1-247b-42a5-bed9-03d1214af994",
+		"name": "Store_Platform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29274841"
+	},
+	"item": [
+		{
+			"name": "Criar Produto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwNjZkNzIzYy1iODlhLTRiOTktODZkMi05OWMxMDI0MDY4ZTEiLCJpc3MiOiJJbnNwZXIiLCJuYmYiOjE3NDg0NjAzMTAsImV4cCI6MTc0ODU0NjcxMH0.prli8SKaSSCc6j0wr4nrhuQ-YzLfMYrepLBSguP5ueE",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Bread\",\r\n    \"price\": 0.87,\r\n    \"unit\": \"slice\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Admin3\",\r\n  \"email\": \"admin3@teste.com\",\r\n  \"password\": \"12345678\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin3@teste.com\",\r\n  \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos os produtos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwNjZkNzIzYy1iODlhLTRiOTktODZkMi05OWMxMDI0MDY4ZTEiLCJpc3MiOiJJbnNwZXIiLCJuYmYiOjE3NDg0NjAzMTAsImV4cCI6MTc0ODU0NjcxMH0.prli8SKaSSCc6j0wr4nrhuQ-YzLfMYrepLBSguP5ueE",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar produto pelo id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwNjZkNzIzYy1iODlhLTRiOTktODZkMi05OWMxMDI0MDY4ZTEiLCJpc3MiOiJJbnNwZXIiLCJuYmYiOjE3NDg0NjAzMTAsImV4cCI6MTc0ODU0NjcxMH0.prli8SKaSSCc6j0wr4nrhuQ-YzLfMYrepLBSguP5ueE",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/product/01fef110-5ca9-4e83-803c-453873d2db77",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"01fef110-5ca9-4e83-803c-453873d2db77"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar produto pelo id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwNjZkNzIzYy1iODlhLTRiOTktODZkMi05OWMxMDI0MDY4ZTEiLCJpc3MiOiJJbnNwZXIiLCJuYmYiOjE3NDg0NjAzMTAsImV4cCI6MTc0ODU0NjcxMH0.prli8SKaSSCc6j0wr4nrhuQ-YzLfMYrepLBSguP5ueE",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/product/01fef110-5ca9-4e83-803c-453873d2db77",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"01fef110-5ca9-4e83-803c-453873d2db77"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwNjZkNzIzYy1iODlhLTRiOTktODZkMi05OWMxMDI0MDY4ZTEiLCJpc3MiOiJJbnNwZXIiLCJuYmYiOjE3NDg0NjAzMTAsImV4cCI6MTc0ODU0NjcxMH0.prli8SKaSSCc6j0wr4nrhuQ-YzLfMYrepLBSguP5ueE",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"quantity\": 1,\r\n            \"id_product\": \"7a8437d1-5bca-4050-8fbe-6208524940ca\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/order?idAccount=066d723c-b89a-4b99-86d2-99c1024068e1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order"
+					],
+					"query": [
+						{
+							"key": "idAccount",
+							"value": "066d723c-b89a-4b99-86d2-99c1024068e1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos os orders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwNjZkNzIzYy1iODlhLTRiOTktODZkMi05OWMxMDI0MDY4ZTEiLCJpc3MiOiJJbnNwZXIiLCJuYmYiOjE3NDg0NjAzMTAsImV4cCI6MTc0ODU0NjcxMH0.prli8SKaSSCc6j0wr4nrhuQ-YzLfMYrepLBSguP5ueE",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar order pelo id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwNjZkNzIzYy1iODlhLTRiOTktODZkMi05OWMxMDI0MDY4ZTEiLCJpc3MiOiJJbnNwZXIiLCJuYmYiOjE3NDg0NjAzMTAsImV4cCI6MTc0ODU0NjcxMH0.prli8SKaSSCc6j0wr4nrhuQ-YzLfMYrepLBSguP5ueE",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/order/7565116d-c6ab-458a-923d-dc039ad69a2d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"7565116d-c6ab-458a-923d-dc039ad69a2d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
