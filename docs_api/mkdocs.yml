@@ -1,0 +1,33 @@
+site_name: Plataforma Microsserviços
+repo_url: https://github.com/gustavoribolla/plataforma_microsservicos
+site_description: "Documentação completa dos microsserviços, CI/CD e infraestrutura."
+site_author: Gustavo Colombi Ribolla
+copyright: "© 2025 – Gustavo Colombi Ribolla"
+
+theme:
+  name: material
+  language: pt
+  palette:
+    scheme: default
+    primary: blue grey
+    accent: lime
+  features:
+    - navigation.tabs
+    - content.code.annotate
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - tables
+
+nav:
+  - Início: index.md
+  - Exchange API: exchange-api.md
+  - Product API: product-api.md
+  - Order API: order-api.md
+  - Jenkins: jenkins.md
+  - MiniKube: minikube.md
+  - Bottlenecks: bottlenecks.md
