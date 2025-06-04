@@ -1,6 +1,6 @@
 # Plataforma de Microsserviços
 
-[YouTube – vídeo-guia](https://youtu.be/<ID_DO_VIDEO>)
+[YouTube – vídeo-guia](https://www.youtube.com/watch?v=fUEl0t1fvpY)
 
 Projeto desenvolvido por: *Gustavo Colombi Ribolla*
 
